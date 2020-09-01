@@ -275,7 +275,7 @@ function page_require_level($require_level)
 function join_product_table()
 {
   global $db;
-  $sql  = " SELECT p.id,p.name,p.location,p.quantity,p.buy_price,p.sale_price,p.media_id,p.date,c.name";
+  $sql  = " SELECT p.id,p.name,p.location,p.quantity,p.buy_price,p.media_id,p.date,c.name";
   $sql  .= " AS category,m.file_name AS image";
   $sql  .= " FROM products p";
   $sql  .= " LEFT JOIN categories c ON c.id = p.category_id";
@@ -360,7 +360,7 @@ function decrease_product_qty($qty, $p_id)
 function find_recent_product_added($limit)
 {
   global $db;
-  $sql   = " SELECT p.id,p.name,p.sale_price,p.media_id,c.name AS category,";
+  $sql   = " SELECT p.id,p.name,p.buy_price,p.media_id,c.name AS category,";
   $sql  .= "m.file_name AS image FROM products p";
   $sql  .= " LEFT JOIN categories c ON c.id = p.category_id";
   $sql  .= " LEFT JOIN media m ON m.id = p.media_id";
@@ -386,7 +386,7 @@ function find_higest_saleing_product($limit)
 function find_all_sales()
 {
   global $db;
-  $sql  = "SELECT s.id,s.order_id,s.qty,s.price,s.date,p.name";
+  $sql  = "SELECT s.id,s.order_id,s.qty,s.price,s.date,s.supplier,p.name";
   $sql .= " FROM sales s";
   $sql .= " LEFT JOIN orders o ON s.order_id = o.id";
   $sql .= " LEFT JOIN products p ON s.product_id = p.id";

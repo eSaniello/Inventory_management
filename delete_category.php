@@ -1,4 +1,5 @@
 <?php
+
 /**
  * delete_category.php
  *
@@ -14,16 +15,16 @@ page_require_level(1);
 $category = find_by_id('categories', (int)$_GET['id']);
 if (!$category) {
 	$session->msg("d", "Missing category id.");
-	redirect('category.php');
+	redirect('categories.php');
 }
 ?>
 <?php
 $delete_id = delete_by_id('categories', (int)$category['id']);
 if ($delete_id) {
 	$session->msg("s", "category deleted.");
-	redirect('category.php');
+	redirect('categories.php');
 } else {
 	$session->msg("d", "category deletion failed.");
-	redirect('category.php');
+	redirect('categories.php');
 }
 ?>

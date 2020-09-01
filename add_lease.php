@@ -88,9 +88,7 @@ if (isset($_POST['add_lease'])) {
                     </div>
                 </form>
             </div>
-
         </div>
-
     </div>
 </div>
 

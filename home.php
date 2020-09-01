@@ -17,9 +17,9 @@ if (!$session->isUserLoggedIn(true)) {
 // $c_product       = count_by_id('products');
 // $c_sale          = count_by_id('sales');
 // $c_user          = count_by_id('users');
-$products_sold   = find_higest_saleing_product('10');
+// $products_sold   = find_higest_saleing_product('10');
+// $recent_sales    = find_recent_sale_added('5');
 $recent_products = find_recent_product_added('5');
-$recent_sales    = find_recent_sale_added('5');
 $all_leases = find_all_leases();
 ?>
 <?php include_once 'layouts/header.php'; ?>
@@ -141,7 +141,7 @@ $all_leases = find_all_leases();
                 <?php endif; ?>
                 <?php echo remove_junk(first_character($recent_product['name'])); ?>
                 <span class="label label-warning pull-right">
-                  $<?php echo (int)$recent_product['sale_price']; ?>
+                  $<?php echo (int)$recent_product['buy_price']; ?>
                 </span>
               </h4>
               <span class="list-group-item-text pull-right">
