@@ -7,7 +7,7 @@
  */
 
 
-$page_title = 'All categories';
+$page_title = 'Alle categories';
 require_once 'includes/load.php';
 // Checkin What level user has permission to view this page
 page_require_level(1);
@@ -55,7 +55,7 @@ if (isset($_POST['add_cat'])) {
         <strong>
           <span class="glyphicon glyphicon-th"></span>
           <!--     *************************     -->
-          <span>Add New category</span>
+          <span>Nieuwe categorie toevoegen</span>
           <!--     *************************     -->
         </strong>
       </div>
@@ -63,11 +63,11 @@ if (isset($_POST['add_cat'])) {
         <form method="post" action="categories.php">
           <div class="form-group">
             <!--     *************************     -->
-            <input type="text" class="form-control" name="category-name" placeholder="Category Name">
+            <input type="text" class="form-control" name="category-name" placeholder="Categorie Naam">
           </div>
 
           <div class="pull-right">
-            <button type="submit" name="add_cat" class="btn btn-primary">Add Category</button>
+            <button type="submit" name="add_cat" class="btn btn-primary">Categorie Toevoegen</button>
           </div>
 
           <!--     *************************     -->
@@ -81,7 +81,7 @@ if (isset($_POST['add_cat'])) {
         <strong>
           <span class="glyphicon glyphicon-th"></span>
           <!--     *************************     -->
-          <span>All Categories</span>
+          <span>Alle Categories</span>
           <!--     *************************     -->
         </strong>
       </div>
@@ -93,7 +93,7 @@ if (isset($_POST['add_cat'])) {
               <!--     *************************     -->
               <th>Categories</th>
               <!--     *************************     -->
-              <th class="text-center" style="width: 100px;">Actions</th>
+              <th class="text-center" style="width: 100px;">Acties</th>
             </tr>
           </thead>
           <tbody>

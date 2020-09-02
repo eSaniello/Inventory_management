@@ -8,21 +8,21 @@
   <li>
     <a href="#" class="submenu-toggle">
       <i class="glyphicon glyphicon-user"></i>
-      <span>User Management</span>
+      <span>Gebruikersbeheer</span>
     </a>
     <ul class="nav submenu">
-      <li><a href="group.php">Manage Groups</a> </li>
-      <li><a href="users.php">Manage Users</a> </li>
-   </ul>
+      <li><a href="group.php">Groepen beheren</a> </li>
+      <li><a href="users.php">Gebruikers beheren</a> </li>
+    </ul>
   </li>
   <li>
-    <a href="media.php" >
+    <a href="media.php">
       <i class="glyphicon glyphicon-picture"></i>
       <span>Media</span>
     </a>
   </li>
   <li>
-    <a href="categories.php" >
+    <a href="categories.php">
       <i class="glyphicon glyphicon-indent-left"></i>
       <span>Categories</span>
     </a>
@@ -30,38 +30,27 @@
   <li>
     <a href="#" class="submenu-toggle">
       <i class="glyphicon glyphicon-th-large"></i>
-      <span>Products</span>
+      <span>Producten</span>
     </a>
     <ul class="nav submenu">
-       <li><a href="products.php">Manage products</a> </li>
-       <li><a href="add_product.php">Add product</a> </li>
-   </ul>
+      <li><a href="products.php">Producten beheren</a> </li>
+      <li><a href="add_product.php">Product toevoegen</a> </li>
+    </ul>
   </li>
   <li>
     <a href="stock.php" class="submenu-toggle">
       <i class="glyphicon glyphicon-th-large"></i>
-      <span>Stock</span>
+      <span>Voorraad</span>
     </a>
   </li>
   <li>
     <a href="#" class="submenu-toggle">
       <i class="glyphicon glyphicon-th-list"></i>
-       <span>Sales</span>
-      </a>
-      <ul class="nav submenu">
-         <li><a href="orders.php">Manage Orders</a> </li>
-         <li><a href="add_order.php">Add Order</a> </li>
-     </ul>
-  </li>
-  <li>
-    <a href="#" class="submenu-toggle">
-      <i class="glyphicon glyphicon-signal"></i>
-       <span>Sales Report</span>
-      </a>
-      <ul class="nav submenu">
-        <li><a href="sales_report.php">Sales by dates </a></li>
-        <li><a href="monthly_sales.php">Monthly sales</a></li>
-        <li><a href="daily_sales.php">Daily sales</a> </li>
-      </ul>
+      <span>Boekhouden</span>
+    </a>
+    <ul class="nav submenu">
+      <li><a href="orders.php">Bestellingen</a> </li>
+      <li><a href="waarde.php">Voorraadwaarde</a> </li>
+    </ul>
   </li>
 </ul>

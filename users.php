@@ -10,7 +10,7 @@
 ?>
 
 <?php
-$page_title = 'All User';
+$page_title = 'Gebruikers';
 require_once 'includes/load.php';
 ?>
 
@@ -38,10 +38,10 @@ $all_users = find_all_user();
       <div class="panel-heading clearfix">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
-          <span>Users</span>
+          <span>Genruikers</span>
           <!--     *************************     -->
         </strong>
-        <a href="add_user.php" class="btn btn-info pull-right">Add New User</a>
+        <a href="add_user.php" class="btn btn-info pull-right">Nieuwe gebruikers toevoegen</a>
       </div>
       <div class="panel-body">
         <table class="table table-bordered table-striped">
@@ -49,12 +49,12 @@ $all_users = find_all_user();
             <!--     *************************     -->
             <tr>
               <th class="text-center" style="width: 50px;">#</th>
-              <th>Name </th>
-              <th>Username</th>
-              <th class="text-center" style="width: 15%;">User Role</th>
+              <th>Naam </th>
+              <th>Gebruikersnaam</th>
+              <th class="text-center" style="width: 15%;">Gebruikers rol</th>
               <th class="text-center" style="width: 10%;">Status</th>
-              <th style="width: 20%;">Last Login</th>
-              <th class="text-center" style="width: 100px;">Actions</th>
+              <th style="width: 20%;">Laatste Login</th>
+              <th class="text-center" style="width: 100px;">Acties</th>
             </tr>
             <!--     *************************     -->
           </thead>
@@ -71,9 +71,9 @@ $all_users = find_all_user();
                 <!--     *************************     -->
                 <td class="text-center">
                   <?php if ($a_user['status'] === '1') : ?>
-                    <span class="label label-success"><?php echo "Active"; ?></span>
+                    <span class="label label-success"><?php echo "Actief"; ?></span>
                   <?php else : ?>
-                    <span class="label label-danger"><?php echo "Deactive"; ?></span>
+                    <span class="label label-danger"><?php echo "Inactief"; ?></span>
                   <?php endif; ?>
                 </td>
                 <!--     *************************     -->

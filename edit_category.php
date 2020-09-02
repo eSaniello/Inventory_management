@@ -54,7 +54,7 @@ if (isset($_POST['edit_cat'])) {
       <div class="panel-heading">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
-          <span>Editing <?php echo remove_junk(ucfirst($category['name'])); ?></span>
+          <span> <?php echo remove_junk(ucfirst($category['name'])); ?> Bijwerken</span>
         </strong>
       </div>
       <div class="panel-body">
@@ -62,7 +62,7 @@ if (isset($_POST['edit_cat'])) {
           <div class="form-group">
             <input type="text" class="form-control" name="category-name" value="<?php echo remove_junk(ucfirst($category['name'])); ?>">
           </div>
-          <button type="submit" name="edit_cat" class="btn btn-primary">Update category</button>
+          <button type="submit" name="edit_cat" class="btn btn-primary">Categorie bijwerken</button>
         </form>
       </div>
     </div>

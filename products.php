@@ -7,7 +7,7 @@
  */
 
 
-$page_title = 'All Product';
+$page_title = 'Alle Producten';
 require_once 'includes/load.php';
 // Checkin What level user has permission to view this page
 page_require_level(2);
@@ -31,12 +31,12 @@ if (isset($_POST['update_category'])) {
       <div class="form-group">
         <div class="input-group">
           <span class="input-group-btn">
-            <button type="submit" name="update_category" class="btn btn-primary">Update Category</button>
+            <button type="submit" name="update_category" class="btn btn-primary">Categorie wijzigen</button>
           </span>
 
 
           <select class="form-control" name="product-category">
-            <option value="">Select Product Category</option>
+            <option value="">Product categorie selecteren</option>
             <?php foreach ($all_categories as $cat) : ?>
               <option value="<?php echo (int)$cat['id'] ?>">
                 <?php echo $cat['name'] ?></option>
@@ -79,14 +79,14 @@ if (isset($_POST['update_category'])) {
             <tr>
               <!--     *************************     -->
               <th class="text-center" style="width: 50px;">#</th>
-              <th class="text-center" style="width: 10%;"> Category </th>
-              <th> Product Title </th>
-              <th> Photo</th>
-              <th class="text-center" style="width: 10%;"> Location </th>
-              <th class="text-center" style="width: 10%;"> Stock </th>
-              <th class="text-center" style="width: 10%;"> Cost Price </th>
-              <th class="text-center" style="width: 10%;"> Product Added </th>
-              <th class="text-center" style="width: 100px;"> Actions </th>
+              <th class="text-center" style="width: 10%;"> Categorie </th>
+              <th> Product Titel </th>
+              <th> Foto</th>
+              <th class="text-center" style="width: 10%;"> Locatie </th>
+              <th class="text-center" style="width: 10%;"> Voorraad </th>
+              <th class="text-center" style="width: 10%;"> Prijs </th>
+              <th class="text-center" style="width: 10%;"> Toegevoegd op </th>
+              <th class="text-center" style="width: 100px;"> Acties </th>
             </tr>
             <!--     *************************     -->
           </thead>

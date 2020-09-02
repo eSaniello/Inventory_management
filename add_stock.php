@@ -7,13 +7,12 @@
  */
 
 
-$page_title = 'All stock';
+$page_title = 'Voorraad toevoegen';
 require_once 'includes/load.php';
 // Checkin What level user has permission to view this page
 page_require_level(1);
 
 $selected_product = 0;
-$selected_product = (int)$_GET['id'];
 
 $all_stock = find_all('stock');
 $all_products = find_all('products');
@@ -64,7 +63,7 @@ if (isset($_POST['add_stock'])) {
 <div class="login-page">
 	<div class="text-center">
 		<!--     *************************     -->
-		<h2>Add Stock</h3>
+		<h2>Voorraad toevoegen</h3>
 			<!--     *************************     -->
 	</div>
 	<div class="form-group">
@@ -77,7 +76,7 @@ if (isset($_POST['add_stock'])) {
 <label for="name" class="control-label">Product</label>
 -->
 			<select class="form-control" name="product_id">
-				<option value="0">Select Product</option>
+				<option value="0">Product selecteren</option>
 				<?php
 				foreach ($all_products as $product) {
 					if ($selected_product == $product['id']) {
@@ -95,7 +94,7 @@ if (isset($_POST['add_stock'])) {
 				<span class="input-group-addon">
 					<i class="glyphicon glyphicon-shopping-cart"></i>
 				</span>
-				<input type="number" class="form-control" name="quantity" placeholder="Product Quantity">
+				<input type="number" class="form-control" name="quantity" placeholder="Product Aantal">
 			</div>
 		</div>
 
@@ -106,7 +105,7 @@ if (isset($_POST['add_stock'])) {
 		<!--     *************************     -->
 		<div class="form-group clearfix">
 			<div class="pull-right">
-				<button type="submit" name="add_stock" class="btn btn-info">Add</button>
+				<button type="submit" name="add_stock" class="btn btn-info">Toevoegen</button>
 			</div>
 		</div>
 	</form>

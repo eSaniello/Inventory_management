@@ -7,7 +7,7 @@
  */
 
 
-$page_title = 'Add Product';
+$page_title = 'Product toevoegen';
 require_once 'includes/load.php';
 // Checkin What level user has permission to view this page
 page_require_level(2);
@@ -88,7 +88,7 @@ if (isset($_POST['add_product'])) {
         <strong>
           <span class="glyphicon glyphicon-th"></span>
           <!--     *************************     -->
-          <span>Add New Product</span>
+          <span>Nieuwe product toevoegen</span>
           <!--     *************************     -->
         </strong>
       </div>
@@ -102,7 +102,7 @@ if (isset($_POST['add_product'])) {
                 <span class="input-group-addon">
                   <i class="glyphicon glyphicon-th-large"></i>
                 </span>
-                <input type="text" class="form-control" name="product-title" placeholder="Product Title">
+                <input type="text" class="form-control" name="product-title" placeholder="Product Titel">
               </div>
             </div>
 
@@ -113,7 +113,7 @@ if (isset($_POST['add_product'])) {
                 <span class="input-group-addon">
                   <i class="glyphicon glyphicon-th-large"></i>
                 </span>
-                <input type="text" class="form-control" name="product-desc" placeholder="Product Description">
+                <input type="text" class="form-control" name="product-desc" placeholder="Product omschrijving">
               </div>
             </div>
 
@@ -125,7 +125,7 @@ if (isset($_POST['add_product'])) {
                 <span class="input-group-addon">
                   <i class="glyphicon glyphicon-th-large"></i>
                 </span>
-                <input type="text" class="form-control" name="product-location" placeholder="Product Location">
+                <input type="text" class="form-control" name="product-location" placeholder="Product Locatie">
               </div>
             </div>
 
@@ -137,7 +137,7 @@ if (isset($_POST['add_product'])) {
                 <!--     *************************     -->
                 <div class="col-md-6">
                   <select class="form-control" name="product-category">
-                    <option value="">Select Product Category</option>
+                    <option value="">Product categorie selecteren</option>
 
 
                     <?php foreach ($all_categories as $cat) : ?>
@@ -151,7 +151,7 @@ if (isset($_POST['add_product'])) {
 
                 <div class="col-md-6">
                   <select class="form-control" name="product-photo">
-                    <option value="">Select Product Photo</option>
+                    <option value="">Product foto selecteren</option>
 
                     <?php foreach ($all_photo as $photo) : ?>
                       <option value="<?php echo (int)$photo['id'] ?>">
@@ -174,7 +174,7 @@ if (isset($_POST['add_product'])) {
                     <span class="input-group-addon">
                       <i class="glyphicon glyphicon-shopping-cart"></i>
                     </span>
-                    <input type="number" class="form-control" name="product-quantity" placeholder="Product Quantity">
+                    <input type="number" class="form-control" name="product-quantity" placeholder="Product Aantal">
                   </div>
                 </div>
 
@@ -183,7 +183,7 @@ if (isset($_POST['add_product'])) {
                     <span class="input-group-addon">
                       <i class="glyphicon glyphicon-usd"></i>
                     </span>
-                    <input type="number" min="0" step="any" class="form-control" name="cost-price" placeholder="Cost Price">
+                    <input type="number" min="0" step="any" class="form-control" name="cost-price" placeholder="Prijs">
                   </div>
                 </div>
                 <!--     *************************     -->
@@ -192,7 +192,7 @@ if (isset($_POST['add_product'])) {
             </div>
             <!--     *************************     -->
             <div class="pull-right">
-              <button type="submit" name="add_product" class="btn btn-danger">Add product</button>
+              <button type="submit" name="add_product" class="btn btn-danger">product toevoegen</button>
             </div>
 
             <!--     *************************     -->
@@ -202,9 +202,6 @@ if (isset($_POST['add_product'])) {
       </div>
     </div>
     <?php
-    //$product = last_id("products");
-    //$product_id = $product['id'];
-    //echo "product_id: " . $product_id;
     ?>
 
   </div>

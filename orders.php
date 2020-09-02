@@ -7,7 +7,7 @@
  */
 
 
-$page_title = 'All orders';
+$page_title = 'Bestellingen';
 require_once 'includes/load.php';
 // Checkin What level user has permission to view this page
 page_require_level(1);
@@ -31,11 +31,11 @@ $all_orders = find_all('orders')
       <strong>
         <span class="glyphicon glyphicon-th"></span>
         <!--     *************************     -->
-        <span>All Orders</span>
+        <span>Alle bestellingen</span>
         <!--     *************************     -->
       </strong>
       <div class="pull-right">
-        <a href="add_order.php" class="btn btn-primary">Add Order</a>
+        <a href="add_order.php" class="btn btn-primary">Bestelling toevoegen</a>
       </div>
     </div>
     <div class="panel-body">
@@ -47,10 +47,10 @@ $all_orders = find_all('orders')
             <th class="text-center" style="width: 50px;">Product</th>
             <th class="text-center" style="width: 50px;">Aantal</th>
             <th class="text-center" style="width: 50px;">Prijs</th>
-            <th class="text-center" style="width: 50px;">Pay Method</th>
-            <th class="text-center" style="width: 50px;">Notes</th>
-            <th class="text-center" style="width: 50px;">Date</th>
-            <th class="text-center" style="width: 100px;">Actions</th>
+            <th class="text-center" style="width: 50px;">Betalingsmethode</th>
+            <th class="text-center" style="width: 50px;">Notitie</th>
+            <th class="text-center" style="width: 50px;">Datum</th>
+            <th class="text-center" style="width: 100px;">Acties</th>
           </tr>
         </thead>
         <tbody>

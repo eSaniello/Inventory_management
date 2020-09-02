@@ -1,4 +1,5 @@
 <?php
+
 /**
  * edit_stock.php
  *
@@ -6,7 +7,7 @@
  */
 
 
-$page_title = 'Edit category';
+$page_title = 'Voorraad wijzigen';
 require_once 'includes/load.php';
 // Checkin What level user has permission to view this page
 page_require_level(1);
@@ -31,15 +32,15 @@ if (isset($_POST['edit_stock'])) {
 
 	// check if the quantity has changed
 	$s_qty_diff = 0;
-	if ( $quantity != $stock['quantity'] ) {
+	if ($quantity != $stock['quantity']) {
 		// there has been an increase in quantity
-		if ( $quantity > $stock['quantity'] ) {
+		if ($quantity > $stock['quantity']) {
 			// difference between previous quantity and new value
 			$s_qty_diff = $quantity - $stock['quantity'];
 			$decrease_quantity_flag = false;
 		}
 		// there has been a decrease in quantity
-		else if ( $quantity < $stock['quantity'] ) {
+		else if ($quantity < $stock['quantity']) {
 			// difference between previous quantity and new value
 			$s_qty_diff = $stock['quantity'] - $quantity;
 			$decrease_quantity_flag = true;
@@ -57,8 +58,8 @@ if (isset($_POST['edit_stock'])) {
 
 		$result = $db->query($sql);
 		if ($result && $db->affected_rows() === 1) {
-			if ( $s_qty_diff > 0 ) {
-				if ( $decrease_quantity_flag ) {
+			if ($s_qty_diff > 0) {
+				if ($decrease_quantity_flag) {
 					decrease_product_qty($s_qty_diff, $product_id);
 				} else {
 					increase_product_qty($s_qty_diff, $product_id);
@@ -70,7 +71,6 @@ if (isset($_POST['edit_stock'])) {
 			$session->msg("d", "Sorry! Failed");
 			redirect('edit_stock.php', false);
 		}
-
 	} else {
 		$session->msg("d", $errors);
 		redirect('edit_stock.php', false);
@@ -80,51 +80,43 @@ if (isset($_POST['edit_stock'])) {
 <?php include_once 'layouts/header.php'; ?>
 
 <div class="row">
-   <div class="col-md-12">
-     <?php echo display_msg($msg); ?>
-   </div>
-   <div class="col-md-5">
-     <div class="panel panel-default">
-       <div class="panel-heading">
-         <strong>
-           <span class="glyphicon glyphicon-th"></span>
-           <span>Editing <?php echo remove_junk(ucfirst($stock['product_id']));?></span>
-        </strong>
-       </div>
-       <div class="panel-body">
-         <form method="post" action="">
+	<div class="col-md-12">
+		<?php echo display_msg($msg); ?>
+	</div>
+	<div class="col-md-5">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<strong>
+					<span class="glyphicon glyphicon-th"></span>
+					<span> <?php echo remove_junk(ucfirst($stock['product_id'])); ?> Bijwerken</span>
+				</strong>
+			</div>
+			<div class="panel-body">
+				<form method="post" action="">
 
-           <div class="form-group">
-              <label for="name" class="control-label"><?php echo $product['name'];?></label>
-			 <input type="hidden" class="form-control" name="product_id" value="<?php echo $stock['product_id'] ;?>">
-           </div>
+					<div class="form-group">
+						<label for="name" class="control-label"><?php echo $product['name']; ?></label>
+						<input type="hidden" class="form-control" name="product_id" value="<?php echo $stock['product_id']; ?>">
+					</div>
 
-           <div class="form-group">
-		   <div class="input-group">
-			 <span class="input-group-addon">
-			  <i class="glyphicon glyphicon-shopping-cart"></i>
-			 </span>
-			 <input type="number" class="form-control" name="quantity" value="<?php echo $stock['quantity'] ;?>" placeholder="Product Quantity">
-		  </div>
-           </div>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<i class="glyphicon glyphicon-shopping-cart"></i>
+							</span>
+							<input type="number" class="form-control" name="quantity" value="<?php echo $stock['quantity']; ?>" placeholder="Product Quantity">
+						</div>
+					</div>
 
-           <div class="form-group">
-               <input type="text" class="form-control" name="comments" value="<?php echo remove_junk(ucfirst($stock['comments']));?>" placeholder="Notes">
-           </div>
+					<div class="form-group">
+						<input type="text" class="form-control" name="comments" value="<?php echo remove_junk(ucfirst($stock['comments'])); ?>" placeholder="Notes">
+					</div>
 
-           <button type="submit" name="edit_stock" class="btn btn-primary">Update Inventory</button>
-       </form>
-       </div>
-     </div>
-
-
-      <?php
-print "<pre>";
-print_r($stock);
-print "</pre>\n";
-?>
-
-   </div>
+					<button type="submit" name="edit_stock" class="btn btn-primary">Voorraad bijwerken</button>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 
 <?php include_once 'layouts/footer.php'; ?>

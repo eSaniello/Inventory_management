@@ -8,7 +8,7 @@
   <li>
     <a href="leases.php">
       <i class="glyphicon glyphicon-th"></i>
-      <span>Leases</span>
+      <span>Uitleningen</span>
     </a>
   </li>
   <li>

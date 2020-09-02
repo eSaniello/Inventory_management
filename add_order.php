@@ -7,7 +7,7 @@
  */
 
 
-$page_title = 'All orders';
+$page_title = 'Bestelling toevoegen';
 require_once 'includes/load.php';
 // Checkin What level user has permission to view this page
 page_require_level(1);
@@ -50,7 +50,7 @@ if (isset($_POST['add_order'])) {
 
 <div class="login-page">
     <div class="text-center">
-        <h2>Add Order</h2>
+        <h2>Bestelling toevoegen</h2>
     </div>
     <?php echo display_msg($msg); ?>
 
@@ -60,8 +60,7 @@ if (isset($_POST['add_order'])) {
         </div>
 
         <div class="form-group">
-            <label for="name" class="control-label">Customer Name</label>
-            <input type="text" class="form-control" name="customer" value="" placeholder="Customer">
+            <input type="text" class="form-control" name="customer" value="" placeholder="Leverancier">
         </div>
         <div class="form-group">
             <input type="text" class="form-control" name="product" value="" placeholder="Product">
@@ -75,7 +74,7 @@ if (isset($_POST['add_order'])) {
 
         <div class="form-group">
             <select class="form-control" name="paymethod">
-                <option value="">Select Payment Method</option>
+                <option value="">Betalingsmethode selecteren</option>
                 <option value="Cash">Cash</option>
                 <option value="Pinpas">Pinpas</option>
                 <option value="Bank Overmaking">Bank overmaking</option>
@@ -83,13 +82,13 @@ if (isset($_POST['add_order'])) {
         </div>
 
         <div class="form-group">
-            <input type="text" class="form-control" name="notes" placeholder="Notes">
+            <input type="text" class="form-control" name="notes" placeholder="Notities">
         </div>
 
         <!--     *************************     -->
         <div class="form-group clearfix">
             <div class="pull-right">
-                <button type="submit" name="add_order" class="btn btn-info">Start Order</button>
+                <button type="submit" name="add_order" class="btn btn-info">Bestelling plaatsen</button>
             </div>
         </div>
     </form>

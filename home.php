@@ -7,18 +7,11 @@
  */
 
 
-$page_title = 'Home Page';
+$page_title = 'Dashboard';
 require_once 'includes/load.php';
 if (!$session->isUserLoggedIn(true)) {
   redirect('index.php', false);
 }
-
-// $c_categorie     = count_by_id('categories');
-// $c_product       = count_by_id('products');
-// $c_sale          = count_by_id('sales');
-// $c_user          = count_by_id('users');
-// $products_sold   = find_higest_saleing_product('10');
-// $recent_sales    = find_recent_sale_added('5');
 $recent_products = find_recent_product_added('5');
 $all_leases = find_all_leases();
 ?>
@@ -49,7 +42,8 @@ $all_leases = find_all_leases();
         <a href="#" onclick="closePanel();" class="btn btn-xs btn-danger" data-toggle="tooltip" title="Close"><i class="glyphicon glyphicon-remove"></i></a>
       </div>
       <div class="jumbotron text-center">
-        <h3>Welcome!</h3>Contact support for additional assistance.
+        <h3>Welkom!</h3>
+        Neem contact op met helpdesk voor aanvullende hulp.
       </div>
     </div>
   </div>
@@ -62,6 +56,7 @@ $all_leases = find_all_leases();
         <strong>
           <span class="glyphicon glyphicon-th"></span>
           <span>Uitgeleende producten</span>
+          <a href="add_lease.php" class="btn btn-info pull-right">Nieuwe uitleen</a>
         </strong>
       </div>
       <div class="panel-body">
@@ -77,7 +72,7 @@ $all_leases = find_all_leases();
               <th>Aantal</th>
               <th>Reden</th>
               <th>Status</th>
-              <th>Actions</th>
+              <th>Acties</th>
             </tr>
             <!--     *************************     -->
           </thead>
@@ -126,7 +121,8 @@ $all_leases = find_all_leases();
       <div class="panel-heading">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
-          <span>Recently Added Products</span>
+          <span>Recent toegevoegde producten</span>
+          <a href="add_product.php" class="btn btn-info pull-right">+</a>
         </strong>
       </div>
       <div class="panel-body">

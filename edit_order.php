@@ -7,7 +7,7 @@
  */
 
 
-$page_title = 'Edit category';
+$page_title = 'Bestelling wijzigen';
 require_once 'includes/load.php';
 // Checkin What level user has permission to view this page
 page_require_level(2);
@@ -64,7 +64,7 @@ if (isset($_POST['edit_order'])) {
       <div class="panel-heading">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
-          <span>Editing Order #<?php echo remove_junk(ucfirst($order['id'])); ?></span>
+          <span>#<?php echo remove_junk(ucfirst($order['id'])); ?> Bijwerken</span>
         </strong>
       </div>
       <div class="panel-body">
@@ -84,7 +84,7 @@ if (isset($_POST['edit_order'])) {
 
           <div class="form-group">
             <select class="form-control" name="paymethod">
-              <option value="">Select Payment Method</option>
+              <option value="">Betalingsmethode selecteren</option>
               <option value="Cash" <?php if ($order['paymethod'] === "Cash") : echo "selected";
                                     endif; ?>>Cash</option>
               <option value="Pinpas" <?php if ($order['paymethod'] === "Pinpas") : echo "selected";
@@ -102,18 +102,10 @@ if (isset($_POST['edit_order'])) {
             <input type="date" class="form-control datepicker" name="date" data-date-format="" value="<?php echo remove_junk($order['date']); ?>">
           </div>
 
-          <button type="submit" name="edit_order" class="btn btn-primary">Update order</button>
+          <button type="submit" name="edit_order" class="btn btn-primary">Bestelling wijzigen</button>
         </form>
       </div>
     </div>
-
-
-    <?php
-    // print "<pre>";
-    // print_r($order);
-    // print "</pre>\n";
-    ?>
-
   </div>
 </div>
 
