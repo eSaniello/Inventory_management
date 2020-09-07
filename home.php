@@ -137,7 +137,7 @@ $all_leases = find_all_leases();
                 <?php endif; ?>
                 <?php echo remove_junk(first_character($recent_product['name'])); ?>
                 <span class="label label-warning pull-right">
-                  $<?php echo (int)$recent_product['buy_price']; ?>
+                  SRD <?php echo (int)$recent_product['buy_price']; ?>
                 </span>
               </h4>
               <span class="list-group-item-text pull-right">

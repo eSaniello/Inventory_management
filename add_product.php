@@ -181,7 +181,7 @@ if (isset($_POST['add_product'])) {
                 <div class="col-md-4">
                   <div class="input-group">
                     <span class="input-group-addon">
-                      <i class="glyphicon glyphicon-usd"></i>
+                      <i class="glyphicon glyphicon-credit-card"></i>
                     </span>
                     <input type="number" min="0" step="any" class="form-control" name="cost-price" placeholder="Prijs">
                   </div>
