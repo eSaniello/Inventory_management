@@ -49,7 +49,10 @@ $all_products = find_all('products');
                 </thead>
                 <tbody>
                     <!--     *************************     -->
-                    <?php foreach ($all_stock as $stock) : ?>
+                    <?php
+                    $totaleWaarde = 0;
+
+                    foreach ($all_stock as $stock) : ?>
                         <tr>
                             <td class="text-center">
                                 <a href="view_product.php?id=<?php echo (int)$stock['product_id']; ?>">
@@ -78,7 +81,9 @@ $all_products = find_all('products');
                                 <?php
                                 foreach ($all_products as $product) {
                                     if ($stock['product_id'] == $product['id']) {
-                                        echo "SRD " . $product['buy_price'] * $stock['quantity'];
+                                        $total = $product['buy_price'] * $stock['quantity'];
+                                        $totaleWaarde += $total;
+                                        echo "SRD " . $total;
                                     }
                                 }
                                 ?>
@@ -88,6 +93,7 @@ $all_products = find_all('products');
                     <!--     *************************     -->
                 </tbody>
             </table>
+            <b>TOTALE VOORRAAD WAARDE: SRD <?php echo $totaleWaarde; ?></b>
         </div>
     </div>
 
